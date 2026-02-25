@@ -82,7 +82,7 @@ const ExperienceSection = () => {
         {
             project: "Simulador Naval ABAE",
             company: "Agencia Bolivariana para Actividades Espaciales",
-            year: "2025",
+            year: "2019",
             role: "Programador Unity & Modelador 3D",
             tech: "Unity, C#, Blender",
             impact: "Desarrollo técnico y visual de un simulador de alta precisión para la Agencia Bolivariana para Actividades Espaciales, integrando mecánicas navales complejas.",
@@ -91,7 +91,7 @@ const ExperienceSection = () => {
         {
             project: "Yuky: Fábrica de la Alegría",
             company: "Quantic Solutions & Polar",
-            year: "2019",
+            year: "2025",
             role: "Modelador y Diseñador 3D",
             tech: "Unity, Roblox, Blender",
             impact: "Creación integral de personajes y entornos (environments) para una plataforma de juegos en Roblox, enfocada en branding interactivo.",
