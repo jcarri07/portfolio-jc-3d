@@ -4,8 +4,17 @@ import * as THREE from 'three';
 
 const WavingMesh = () => {
     const meshRef = useRef();
+    const [isMobile, setIsMobile] = React.useState(false);
+
+    React.useEffect(() => {
+        const checkMobile = () => setIsMobile(window.innerWidth < 768);
+        checkMobile();
+        window.addEventListener('resize', checkMobile);
+        return () => window.removeEventListener('resize', checkMobile);
+    }, []);
 
     useFrame((state) => {
+        if (isMobile) return;
         const time = state.clock.getElapsedTime();
         const positions = meshRef.current.geometry.attributes.position.array;
 
@@ -18,6 +27,8 @@ const WavingMesh = () => {
 
         meshRef.current.geometry.attributes.position.needsUpdate = true;
     });
+
+    if (isMobile) return null;
 
     return (
         <mesh ref={meshRef} rotation={[-Math.PI / 2.5, 0, 0]} position={[0, -2, -5]}>

@@ -71,8 +71,8 @@ const PortfolioGrid = () => {
     return (
         <section id="portafolio" className="py-24 bg-transparent">
             <div className="container mx-auto px-6">
-                <div className="flex flex-col items-center mb-16">
-                    <h2 className="text-4xl sm:text-5xl font-black text-white mb-6">TRABAJOS <span className="text-neon-blue">SELECCIONADOS</span></h2>
+                <div className="flex flex-col items-center mb-16 px-4">
+                    <h2 className="text-4xl sm:text-5xl font-black text-white mb-6 text-center leading-tight">TRABAJOS <span className="text-neon-blue">SELECCIONADOS</span></h2>
 
                     {/* Filters */}
                     <div className="flex flex-wrap justify-center gap-4 mt-8">

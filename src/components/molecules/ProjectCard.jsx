@@ -6,6 +6,7 @@ import ModelLoader from './ModelLoader';
 import ErrorBoundary from '../atoms/ErrorBoundary';
 
 const ProjectCard = ({ title, category, image, description, links = {}, model, modelScale = 1.5, modelPosition = [0, 0, 0], modelRotation = [0, 0, 0] }) => {
+
     return (
         <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -20,12 +21,22 @@ const ProjectCard = ({ title, category, image, description, links = {}, model, m
             {/* Image/Model Container */}
             <div className="relative h-64 overflow-hidden">
                 {model ? (
-                    <div className="w-full h-full bg-black">
-                        <ErrorBoundary>
-                            <Scene3D>
-                                <ModelLoader url={model} scale={modelScale} position={modelPosition} rotation={modelRotation} />
-                            </Scene3D>
-                        </ErrorBoundary>
+                    <div className="w-full h-full bg-black flex justify-center">
+                        <div className="w-[85%] md:w-full h-full relative">
+                            <ErrorBoundary>
+                                <Scene3D>
+                                    <ModelLoader url={model} scale={modelScale} position={modelPosition} rotation={modelRotation} />
+                                </Scene3D>
+                            </ErrorBoundary>
+
+                            {/* Scroll Assist Overlays (Mobile) */}
+                            <div className="absolute inset-y-0 -left-[8.8%] w-[8.8%] bg-transparent z-20 md:hidden pointer-events-none" />
+                            <div className="absolute inset-y-0 -right-[8.8%] w-[8.8%] bg-transparent z-20 md:hidden pointer-events-none" />
+                        </div>
+
+                        {/* Mobile Scroll Handles */}
+                        <div className="absolute inset-y-0 left-0 w-[15%] md:hidden z-30 pointer-events-auto" />
+                        <div className="absolute inset-y-0 right-0 w-[15%] md:hidden z-30 pointer-events-auto" />
                     </div>
                 ) : (
                     <motion.img
@@ -37,7 +48,7 @@ const ProjectCard = ({ title, category, image, description, links = {}, model, m
                     />
                 )}
                 <div className="absolute top-4 left-4 z-10">
-                    <span className="px-3 py-1 bg-black/60 backdrop-blur-md border border-white/20 text-xs font-medium text-neon-blue rounded-full flex items-center gap-1">
+                    <span className="px-3 py-1 bg-black/60 backdrop-blur-md border border-white/20 text-xs font-medium text-neon-blue rounded-full flex items-center gap-1 uppercase tracking-widest font-bold">
                         {model && <CubeIcon size={12} />}
                         {category}
                     </span>

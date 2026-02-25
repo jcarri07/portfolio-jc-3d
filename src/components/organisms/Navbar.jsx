@@ -3,18 +3,18 @@ import { motion } from 'framer-motion';
 
 const Navbar = () => {
     return (
-        <nav className="fixed top-0 left-0 w-full z-50 bg-black/50 backdrop-blur-lg border-b border-white/5">
-            <div className="container mx-auto px-6 h-20 flex items-center justify-between">
+        <nav className="fixed top-0 left-0 right-0 z-50 bg-black/60 backdrop-blur-xl border-b border-white/5">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 h-16 sm:h-20 flex items-center justify-between">
                 <motion.div
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
-                    className="text-xl font-bold tracking-tighter"
+                    className="text-lg sm:text-xl font-bold tracking-tighter"
                 >
                     JC<span className="text-neon-blue">.</span>
                 </motion.div>
 
                 <div className="hidden md:flex items-center gap-8">
-                    {['Portafolio', 'Sobre-Mi', 'Contacto'].map((item) => (
+                    {['Portafolio', 'Experiencia', 'Sobre-Mi', 'Contacto'].map((item) => (
                         <motion.a
                             key={item}
                             href={`#${item.toLowerCase()}`}
@@ -30,10 +30,11 @@ const Navbar = () => {
                 <motion.div
                     initial={{ opacity: 0, x: 20 }}
                     animate={{ opacity: 1, x: 0 }}
+                    className="flex-shrink-0"
                 >
                     <a
                         href="mailto:carrizalesj5@gmail.com"
-                        className="px-5 py-2 rounded-full bg-border-gradient text-xs font-bold uppercase tracking-widest hover:scale-105 transition-transform"
+                        className="px-4 py-1.5 sm:px-6 sm:py-2.5 rounded-full bg-border-gradient text-[9px] sm:text-[10px] font-black uppercase tracking-[0.2em] hover:scale-105 active:scale-95 transition-all inline-block whitespace-nowrap shadow-lg shadow-neon-blue/10"
                     >
                         ¡Contrátame!
                     </a>

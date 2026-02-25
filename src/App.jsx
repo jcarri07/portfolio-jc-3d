@@ -3,14 +3,16 @@ import Navbar from './components/organisms/Navbar';
 import Hero from './components/organisms/Hero';
 import PortfolioGrid from './components/organisms/PortfolioGrid';
 import ContactSection from './components/organisms/ContactSection';
+import ExperienceSection from './components/organisms/ExperienceSection';
 import Scene3D from './components/molecules/Scene3D';
+import ModelLoader from './components/molecules/ModelLoader';
 import WavingMesh from './components/molecules/WavingMesh';
 import ErrorBoundary from './components/atoms/ErrorBoundary';
 import { Cpu, Box, Gamepad2, PenTool } from 'lucide-react';
 
 function App() {
   return (
-    <div className="bg-black min-h-screen text-white selection:bg-neon-blue selection:text-black relative">
+    <div className="bg-black min-h-screen text-white selection:bg-neon-blue selection:text-black relative overflow-x-hidden">
       <Navbar />
 
       {/* Global Background */}
@@ -51,37 +53,24 @@ function App() {
           </div>
         </section>
 
-        {/* About Section - Simple version for layout */}
+        {/* About Section */}
         <section id="sobre-mi" className="py-24 bg-transparent">
           <div className="container mx-auto px-6">
-            <div className="flex flex-col lg:flex-row gap-16 items-center">
-              <div className="flex-1">
-                <h2 className="text-4xl sm:text-5xl font-black text-white mb-8 uppercase">Un poco <span className="text-neon-purple">Sobre Mí</span></h2>
-                <div className="space-y-6 text-gray-400 text-lg leading-relaxed">
-                  <p>
-                    Soy José Carrizales, un creador versátil que fusiona los mundos del modelado 3D, el diseño gráfico y la ilustración. Mi trabajo es impulsado por una pasión por la estética futurista y la precisión técnica.
-                  </p>
-                  <p>
-                    Con años de experiencia en Blender y herramientas de diseño, creo assets que no solo son visualmente impactantes, sino también optimizados para el rendimiento en tiempo real en aplicaciones web y móviles.
-                  </p>
-                </div>
-              </div>
-              <div className="flex-1 relative">
-                <div className="w-full aspect-square bg-border-gradient rounded-2xl p-[1px]">
-                  <div className="w-full h-full bg-black rounded-2xl flex items-center justify-center p-8 overflow-hidden">
-                    {/* Abstract design element or image placeholder */}
-                    <div className="w-full h-full border border-white/10 rounded-xl relative group">
-                      <div className="absolute inset-0 bg-neon-blue/5 blur-3xl rounded-full" />
-                      <div className="absolute inset-0 flex items-center justify-center text-neon-blue font-black text-6xl opacity-20 group-hover:opacity-100 transition-opacity">
-                        ARTE 3D
-                      </div>
-                    </div>
-                  </div>
-                </div>
+            <div className="max-w-3xl mx-auto text-center">
+              <h2 className="text-4xl sm:text-5xl font-black text-white mb-8 uppercase">Un poco <span className="text-neon-purple">Sobre Mí</span></h2>
+              <div className="space-y-6 text-gray-400 text-lg sm:text-xl leading-relaxed">
+                <p>
+                  Soy José Carrizales, un creador versátil que fusiona los mundos del modelado 3D, el diseño gráfico y la ilustración. Mi trabajo es impulsado por una pasión por la estética futurista y la precisión técnica.
+                </p>
+                <p>
+                  Con años de experiencia en Blender y herramientas de diseño, creo assets que no solo son visualmente impactantes, sino también optimizados para el rendimiento en tiempo real en aplicaciones web y móviles.
+                </p>
               </div>
             </div>
           </div>
         </section>
+
+        <ExperienceSection />
 
         <PortfolioGrid />
         <ContactSection />

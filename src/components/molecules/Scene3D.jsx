@@ -2,7 +2,7 @@ import React, { Suspense } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls, PerspectiveCamera, Environment, Float, ContactShadows, Html, Center } from '@react-three/drei';
 
-const Scene3D = ({ children }) => {
+const Scene3D = ({ children, autoRotate = false }) => {
     return (
         <div className="w-full h-full min-h-[400px]">
             <Canvas shadows>
@@ -38,8 +38,13 @@ const Scene3D = ({ children }) => {
 
                 <OrbitControls
                     enableZoom={false}
+                    enablePan={false}
+                    enableRotate={false}
+                    rotateSpeed={0.5}
                     maxPolarAngle={Math.PI / 2}
                     minPolarAngle={Math.PI / 4}
+                    autoRotate={true}
+                    autoRotateSpeed={2}
                 />
             </Canvas>
         </div>
